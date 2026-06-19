@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cognis-grcforge"
+version = "1.0.0"
+description = "GRC control crosswalk engine: map controls across frameworks, measure coverage, and find gaps."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Cognis Digital" }]
+maintainers = [{ name = "Cognis Digital" }]
+keywords = ["grc", "compliance", "crosswalk", "nist", "cis", "soc2", "security"]
+license = { text = "COCL 1.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Security",
+    "Intended Audience :: Information Technology",
+]
+
+[project.urls]
+Homepage = "https://github.com/cognis-digital/grcforge"
+
+[project.scripts]
+grcforge = "grcforge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+grcforge = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

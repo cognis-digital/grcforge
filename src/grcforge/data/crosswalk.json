@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "name": "grcforge starter crosswalk",
+    "version": "1.0",
+    "maintainer": "Cognis Digital",
+    "note": "Original crosswalk authored by Cognis Digital. Control identifiers (e.g. AC-2, CIS 5.1, CC6.1) are factual references to public frameworks. All descriptive text below is original and paraphrased; no framework prose is copied."
+  },
+  "frameworks": {
+    "nist": "NIST SP 800-53 Rev. 5 control families",
+    "cis": "CIS Critical Security Controls v8 safeguards",
+    "soc2": "AICPA SOC 2 Trust Services Criteria (Common Criteria)"
+  },
+  "mappings": [
+    {
+      "id": "GRC-001",
+      "topic": "Account lifecycle management",
+      "description": "Create, review, and disable user accounts in a governed way across their lifecycle.",
+      "controls": {
+        "nist": ["AC-2"],
+        "cis": ["CIS 5.1", "CIS 5.3"],
+        "soc2": ["CC6.2", "CC6.3"]
+      }
+    },
+    {
+      "id": "GRC-002",
+      "topic": "Least-privilege access enforcement",
+      "description": "Grant only the access each role needs and constrain elevated permissions.",
+      "controls": {
+        "nist": ["AC-6"],
+        "cis": ["CIS 6.8"],
+        "soc2": ["CC6.1"]
+      }
+    },
+    {
+      "id": "GRC-003",
+      "topic": "Multi-factor authentication",
+      "description": "Require more than one authentication factor for access to sensitive systems.",
+      "controls": {
+        "nist": ["IA-2"],
+        "cis": ["CIS 6.3", "CIS 6.4", "CIS 6.5"],
+        "soc2": ["CC6.1"]
+      }
+    },
+    {
+      "id": "GRC-004",
+      "topic": "Audit log generation",
+      "description": "Record security-relevant events so activity can be reconstructed later.",
+      "controls": {
+        "nist": ["AU-2", "AU-3"],
+        "cis": ["CIS 8.2", "CIS 8.5"],
+        "soc2": ["CC7.2"]
+      }
+    },
+    {
+      "id": "GRC-005",
+      "topic": "Audit log retention and protection",
+      "description": "Keep logs for a defined period and shield them from unauthorized change.",
+      "controls": {
+        "nist": ["AU-9", "AU-11"],
+        "cis": ["CIS 8.3", "CIS 8.10"],
+        "soc2": ["CC7.2"]
+      }
+    },
+    {
+      "id": "GRC-006",
+      "topic": "Vulnerability scanning and remediation",
+      "description": "Routinely scan for weaknesses and remediate them on a risk-based schedule.",
+      "controls": {
+        "nist": ["RA-5"],
+        "cis": ["CIS 7.1", "CIS 7.5", "CIS 7.6"],
+        "soc2": ["CC7.1"]
+      }
+    },
+    {
+      "id": "GRC-007",
+      "topic": "Patch and flaw remediation",
+      "description": "Apply software fixes to address identified flaws in a timely manner.",
+      "controls": {
+        "nist": ["SI-2"],
+        "cis": ["CIS 7.3", "CIS 7.4"],
+        "soc2": ["CC7.1"]
+      }
+    },
+    {
+      "id": "GRC-008",
+      "topic": "Malware and endpoint protection",
+      "description": "Detect, block, and respond to malicious code on endpoints and servers.",
+      "controls": {
+        "nist": ["SI-3"],
+        "cis": ["CIS 10.1", "CIS 10.2"],
+        "soc2": ["CC6.8"]
+      }
+    },
+    {
+      "id": "GRC-009",
+      "topic": "Hardware and software inventory",
+      "description": "Maintain an accurate list of assets and authorized software in the environment.",
+      "controls": {
+        "nist": ["CM-8"],
+        "cis": ["CIS 1.1", "CIS 2.1"],
+        "soc2": ["CC6.1"]
+      }
+    },
+    {
+      "id": "GRC-010",
+      "topic": "Secure configuration baselines",
+      "description": "Define and enforce hardened configuration settings for systems and tools.",
+      "controls": {
+        "nist": ["CM-2", "CM-6"],
+        "cis": ["CIS 4.1", "CIS 4.2"],
+        "soc2": ["CC6.1"]
+      }
+    },
+    {
+      "id": "GRC-011",
+      "topic": "Data-at-rest encryption",
+      "description": "Protect stored sensitive data using approved cryptographic methods.",
+      "controls": {
+        "nist": ["SC-28"],
+        "cis": ["CIS 3.11"],
+        "soc2": ["CC6.1"]
+      }
+    },
+    {
+      "id": "GRC-012",
+      "topic": "Data-in-transit encryption",
+      "description": "Encrypt sensitive data as it moves across networks.",
+      "controls": {
+        "nist": ["SC-8"],
+        "cis": ["CIS 3.10"],
+        "soc2": ["CC6.7"]
+      }
+    },
+    {
+      "id": "GRC-013",
+      "topic": "Backup and recovery",
+      "description": "Take and test recoverable backups so data can be restored after loss.",
+      "controls": {
+        "nist": ["CP-9", "CP-10"],
+        "cis": ["CIS 11.1", "CIS 11.2", "CIS 11.3"],
+        "soc2": ["A1.2", "A1.3"]
+      }
+    },
+    {
+      "id": "GRC-014",
+      "topic": "Incident response process",
+      "description": "Establish a repeatable process to detect, handle, and learn from incidents.",
+      "controls": {
+        "nist": ["IR-4", "IR-8"],
+        "cis": ["CIS 17.1", "CIS 17.4"],
+        "soc2": ["CC7.3", "CC7.4"]
+      }
+    },
+    {
+      "id": "GRC-015",
+      "topic": "Security awareness training",
+      "description": "Educate personnel about their security responsibilities and current threats.",
+      "controls": {
+        "nist": ["AT-2"],
+        "cis": ["CIS 14.1", "CIS 14.2"],
+        "soc2": ["CC2.2"]
+      }
+    },
+    {
+      "id": "GRC-016",
+      "topic": "Risk assessment",
+      "description": "Identify, analyze, and prioritize risks to the organization periodically.",
+      "controls": {
+        "nist": ["RA-3"],
+        "cis": ["CIS 18.1"],
+        "soc2": ["CC3.1", "CC3.2"]
+      }
+    },
+    {
+      "id": "GRC-017",
+      "topic": "Vendor and third-party risk",
+      "description": "Evaluate and monitor the security posture of external service providers.",
+      "controls": {
+        "nist": ["SA-9"],
+        "cis": ["CIS 15.1", "CIS 15.4"],
+        "soc2": ["CC9.2"]
+      }
+    },
+    {
+      "id": "GRC-018",
+      "topic": "Boundary and network protection",
+      "description": "Control and monitor traffic crossing network boundaries and segments.",
+      "controls": {
+        "nist": ["SC-7"],
+        "cis": ["CIS 13.4", "CIS 4.4"],
+        "soc2": ["CC6.6"]
+      }
+    },
+    {
+      "id": "GRC-019",
+      "topic": "Physical access control",
+      "description": "Restrict and record physical entry to facilities housing systems and data.",
+      "controls": {
+        "nist": ["PE-3"],
+        "cis": [],
+        "soc2": ["CC6.4"]
+      }
+    },
+    {
+      "id": "GRC-020",
+      "topic": "Change management",
+      "description": "Review, approve, and track changes to systems before they take effect.",
+      "controls": {
+        "nist": ["CM-3"],
+        "cis": ["CIS 4.2"],
+        "soc2": ["CC8.1"]
+      }
+    },
+    {
+      "id": "GRC-021",
+      "topic": "Access revocation on termination",
+      "description": "Promptly remove access when personnel leave or change roles.",
+      "controls": {
+        "nist": ["PS-4", "AC-2"],
+        "cis": ["CIS 5.3"],
+        "soc2": ["CC6.2"]
+      }
+    },
+    {
+      "id": "GRC-022",
+      "topic": "System monitoring and alerting",
+      "description": "Continuously watch systems for anomalous or unauthorized activity.",
+      "controls": {
+        "nist": ["SI-4"],
+        "cis": ["CIS 13.1", "CIS 8.11"],
+        "soc2": ["CC7.2"]
+      }
+    },
+    {
+      "id": "GRC-023",
+      "topic": "Data inventory and classification",
+      "description": "Identify sensitive data, label it, and govern handling by sensitivity.",
+      "controls": {
+        "nist": ["RA-2"],
+        "cis": ["CIS 3.1", "CIS 3.2", "CIS 3.7"],
+        "soc2": ["CC6.1"]
+      }
+    },
+    {
+      "id": "GRC-024",
+      "topic": "Contingency and continuity planning",
+      "description": "Plan for continued or restored operations during and after disruption.",
+      "controls": {
+        "nist": ["CP-2"],
+        "cis": ["CIS 11.1"],
+        "soc2": ["A1.2", "A1.3"]
+      }
+    }
+  ]
+}
