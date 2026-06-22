@@ -96,6 +96,57 @@ grcforge list                      # all frameworks + mappings
 grcforge list --framework nist     # every control id used for NIST
 ```
 
+## Live data feeds (edge / air-gap)
+
+`grcforge feeds` enriches the crosswalk with **real, authoritative, keyless**
+data — and it is built to run on disconnected / edge gear. Every fetch is cached
+to disk and can be re-served with `--offline`; a snapshot can be sneakernet'd
+into an air-gapped enclave.
+
+This repo consumes two feeds:
+
+| Feed id | Source | URL |
+| --- | --- | --- |
+| `oscal-800-53-rev5-catalog` | NIST SP 800-53 Rev. 5 catalog (OSCAL JSON) | `https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json` |
+| `attack-nist-mappings` | CTID Mappings Explorer: MITRE ATT&CK ⇄ 800-53 Rev. 5 | `https://raw.githubusercontent.com/center-for-threat-informed-defense/mappings-explorer/main/mappings/nist_800_53/attack-16.1/nist_800_53-rev5/enterprise/nist_800_53-rev5_attack-16.1-enterprise.json` |
+
+Both are public and require no API key. The bundled
+[`datafeeds.py`](src/grcforge/datafeeds.py) is standard-library only.
+
+```bash
+grcforge feeds list                                   # what this repo consumes
+grcforge feeds update                                 # fetch + cache both feeds
+grcforge feeds get oscal-800-53-rev5-catalog --offline
+
+# REAL enrichment — resolve the crosswalk's NIST controls to their
+# authoritative OSCAL titles + the ATT&CK techniques each control mitigates:
+grcforge feeds enrich --offline
+
+# Turn a gap report into a real ATT&CK threat-exposure statement:
+grcforge feeds expose examples/implemented.json --framework nist --offline
+```
+
+`feeds enrich` does not invent anything: control titles such as *"AC-2 — Account
+Management"* come straight from NIST's OSCAL catalog, and the per-control ATT&CK
+technique lists come from the CTID crosswalk. `feeds expose` joins that to the
+existing gap analysis so a finding reads *"SC-7 (Boundary Protection) not
+implemented → N ATT&CK techniques unmitigated"* instead of a bare control id.
+
+### Offline / air-gap workflow
+
+1. On a connected staging box: `grcforge feeds update`.
+2. Snapshot the cache for transfer:
+   `python -m grcforge.datafeeds snapshot-export feeds.tar.gz`.
+3. Carry `feeds.tar.gz` to the disconnected enclave and import it into the
+   target cache: `python -m grcforge.datafeeds snapshot-import feeds.tar.gz`.
+4. Run any `feeds` command with `--offline`; it serves only from cache and never
+   touches the network.
+
+The cache location is `COGNIS_FEEDS_CACHE` (default `~/.cache/cognis-feeds`).
+The committed `tests/fixtures/` directory is exactly such a cache — a small,
+trimmed, real slice of both feeds — which is why the test suite runs fully
+offline.
+
 ## Custom crosswalks
 
 Any subcommand accepts `--crosswalk path/to/file.json`. The file format is:
@@ -136,6 +187,7 @@ command to run, and how to act on the result.
 | [06-post-merger-consolidation](demos/06-post-merger-consolidation) | Find the controls that fell through the cracks after a merger |
 | [07-pci-dss-custom-crosswalk](demos/07-pci-dss-custom-crosswalk) | Bring-your-own crosswalk: fold PCI DSS v4.0 into the same model |
 | [08-audit-evidence-export](demos/08-audit-evidence-export) | Export CSV/Markdown coverage and gaps for an audit workpaper |
+| [09-attack-threat-exposure](demos/09-attack-threat-exposure) | Offline NIST OSCAL + ATT&CK feeds: turn control gaps into real adversary-technique exposure |
 
 ## Scope
 

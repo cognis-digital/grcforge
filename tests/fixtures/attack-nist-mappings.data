@@ -1,0 +1,1874 @@
+{
+ "metadata": {
+  "technology_domain": "enterprise",
+  "attack_version": "16.1",
+  "mapping_framework": "nist_800_53",
+  "mapping_framework_version": "rev5",
+  "last_update": "04/16/2025"
+ },
+ "mapping_objects": [
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.008",
+   "attack_object_name": "/etc/passwd and /etc/shadow",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1005",
+   "attack_object_name": "Data from Local System",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1020.001",
+   "attack_object_name": "Traffic Duplication",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-02",
+   "capability_description": "Account Management",
+   "capability_group": "AC",
+   "attack_object_id": "T1021",
+   "attack_object_name": "Remote Services",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1003.008",
+   "attack_object_name": "/etc/passwd and /etc/shadow",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1005",
+   "attack_object_name": "Data from Local System",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1020.001",
+   "attack_object_name": "Traffic Duplication",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "AC-06",
+   "capability_description": "Least Privilege",
+   "capability_group": "AC",
+   "attack_object_id": "T1021",
+   "attack_object_name": "Remote Services",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1001",
+   "attack_object_name": "Data Obfuscation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1001.001",
+   "attack_object_name": "Junk Data",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1001.002",
+   "attack_object_name": "Steganography",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1001.003",
+   "attack_object_name": "Protocol or Service Impersonation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-02",
+   "capability_description": "Baseline Configuration",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1021.005",
+   "attack_object_name": "VNC",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1059.006",
+   "attack_object_name": "Python",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1176",
+   "attack_object_name": "Browser Extensions",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1195",
+   "attack_object_name": "Supply Chain Compromise",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1195.003",
+   "attack_object_name": "Compromise Hardware Supply Chain",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1213",
+   "attack_object_name": "Data from Information Repositories",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1213.001",
+   "attack_object_name": "Confluence",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1213.002",
+   "attack_object_name": "Sharepoint",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1213.005",
+   "attack_object_name": "Messaging Applications",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1495",
+   "attack_object_name": "Firmware Corruption",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1542",
+   "attack_object_name": "Pre-OS Boot",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-03",
+   "capability_description": "Configuration Change Control",
+   "capability_group": "CM",
+   "attack_object_id": "T1542.001",
+   "attack_object_name": "System Firmware",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1001",
+   "attack_object_name": "Data Obfuscation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1001.001",
+   "attack_object_name": "Junk Data",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1001.002",
+   "attack_object_name": "Steganography",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1001.003",
+   "attack_object_name": "Protocol or Service Impersonation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-06",
+   "capability_description": "Configuration Settings",
+   "capability_group": "CM",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1011.001",
+   "attack_object_name": "Exfiltration Over Bluetooth",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1020.001",
+   "attack_object_name": "Traffic Duplication",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1021.001",
+   "attack_object_name": "Remote Desktop Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1021.003",
+   "attack_object_name": "Distributed Component Object Model",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1021.004",
+   "attack_object_name": "SSH",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1021.005",
+   "attack_object_name": "VNC",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1021.006",
+   "attack_object_name": "Windows Remote Management",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1046",
+   "attack_object_name": "Network Service Discovery",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1052",
+   "attack_object_name": "Exfiltration Over Physical Medium",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1052.001",
+   "attack_object_name": "Exfiltration over USB",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1053",
+   "attack_object_name": "Scheduled Task/Job",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CM-08",
+   "capability_description": "System Component Inventory",
+   "capability_group": "CM",
+   "attack_object_id": "T1053.002",
+   "attack_object_name": "At",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1485",
+   "attack_object_name": "Data Destruction",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1486",
+   "attack_object_name": "Data Encrypted for Impact",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1490",
+   "attack_object_name": "Inhibit System Recovery",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1491",
+   "attack_object_name": "Defacement",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1491.001",
+   "attack_object_name": "Internal Defacement",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1491.002",
+   "attack_object_name": "External Defacement",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1561",
+   "attack_object_name": "Disk Wipe",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1561.001",
+   "attack_object_name": "Disk Content Wipe",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-02",
+   "capability_description": "Contingency Plan",
+   "capability_group": "CP",
+   "attack_object_id": "T1561.002",
+   "attack_object_name": "Disk Structure Wipe",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1005",
+   "attack_object_name": "Data from Local System",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1025",
+   "attack_object_name": "Data from Removable Media",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1070",
+   "attack_object_name": "Indicator Removal",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1070.001",
+   "attack_object_name": "Clear Windows Event Logs",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1070.002",
+   "attack_object_name": "Clear Linux or Mac System Logs",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1070.008",
+   "attack_object_name": "Clear Mailbox Data",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1119",
+   "attack_object_name": "Automated Collection",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1485",
+   "attack_object_name": "Data Destruction",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1485.001",
+   "attack_object_name": "Lifecycle-Triggered Deletion",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-09",
+   "capability_description": "System Backup",
+   "capability_group": "CP",
+   "attack_object_id": "T1486",
+   "attack_object_name": "Data Encrypted for Impact",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1485",
+   "attack_object_name": "Data Destruction",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1485.001",
+   "attack_object_name": "Lifecycle-Triggered Deletion",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1486",
+   "attack_object_name": "Data Encrypted for Impact",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1490",
+   "attack_object_name": "Inhibit System Recovery",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1491",
+   "attack_object_name": "Defacement",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1491.001",
+   "attack_object_name": "Internal Defacement",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1491.002",
+   "attack_object_name": "External Defacement",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1561",
+   "attack_object_name": "Disk Wipe",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1561.001",
+   "attack_object_name": "Disk Content Wipe",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1561.002",
+   "attack_object_name": "Disk Structure Wipe",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1565",
+   "attack_object_name": "Data Manipulation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "CP-10",
+   "capability_description": "System Recovery and Reconstitution",
+   "capability_group": "CP",
+   "attack_object_id": "T1565.001",
+   "attack_object_name": "Stored Data Manipulation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1003.008",
+   "attack_object_name": "/etc/passwd and /etc/shadow",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1021",
+   "attack_object_name": "Remote Services",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1021.001",
+   "attack_object_name": "Remote Desktop Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "IA-02",
+   "capability_description": "Identification and Authentication (Organizational Users)",
+   "capability_group": "IA",
+   "attack_object_id": "T1021.002",
+   "attack_object_name": "SMB/Windows Admin Shares",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1011.001",
+   "attack_object_name": "Exfiltration Over Bluetooth",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1021.001",
+   "attack_object_name": "Remote Desktop Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1021.003",
+   "attack_object_name": "Distributed Component Object Model",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1021.004",
+   "attack_object_name": "SSH",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1021.005",
+   "attack_object_name": "VNC",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1021.006",
+   "attack_object_name": "Windows Remote Management",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1046",
+   "attack_object_name": "Network Service Discovery",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1047",
+   "attack_object_name": "Windows Management Instrumentation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1052",
+   "attack_object_name": "Exfiltration Over Physical Medium",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1052.001",
+   "attack_object_name": "Exfiltration over USB",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1053",
+   "attack_object_name": "Scheduled Task/Job",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "RA-05",
+   "capability_description": "Vulnerability Monitoring and Scanning",
+   "capability_group": "RA",
+   "attack_object_id": "T1053.002",
+   "attack_object_name": "At",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SA-09",
+   "capability_description": "External System Services",
+   "capability_group": "SA",
+   "attack_object_id": "T1041",
+   "attack_object_name": "Exfiltration Over C2 Channel",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SA-09",
+   "capability_description": "External System Services",
+   "capability_group": "SA",
+   "attack_object_id": "T1048",
+   "attack_object_name": "Exfiltration Over Alternative Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SA-09",
+   "capability_description": "External System Services",
+   "capability_group": "SA",
+   "attack_object_id": "T1048.002",
+   "attack_object_name": "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SA-09",
+   "capability_description": "External System Services",
+   "capability_group": "SA",
+   "attack_object_id": "T1048.003",
+   "attack_object_name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SA-09",
+   "capability_description": "External System Services",
+   "capability_group": "SA",
+   "attack_object_id": "T1072",
+   "attack_object_name": "Software Deployment Tools",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SA-09",
+   "capability_description": "External System Services",
+   "capability_group": "SA",
+   "attack_object_id": "T1567",
+   "attack_object_name": "Exfiltration Over Web Service",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1001",
+   "attack_object_name": "Data Obfuscation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1001.001",
+   "attack_object_name": "Junk Data",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1001.002",
+   "attack_object_name": "Steganography",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1001.003",
+   "attack_object_name": "Protocol or Service Impersonation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1008",
+   "attack_object_name": "Fallback Channels",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1020.001",
+   "attack_object_name": "Traffic Duplication",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1021.001",
+   "attack_object_name": "Remote Desktop Protocol",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1021.002",
+   "attack_object_name": "SMB/Windows Admin Shares",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1021.003",
+   "attack_object_name": "Distributed Component Object Model",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1021.005",
+   "attack_object_name": "VNC",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1021.006",
+   "attack_object_name": "Windows Remote Management",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-07",
+   "capability_description": "Boundary Protection",
+   "capability_group": "SC",
+   "attack_object_id": "T1029",
+   "attack_object_name": "Scheduled Transfer",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1020.001",
+   "attack_object_name": "Traffic Duplication",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1040",
+   "attack_object_name": "Network Sniffing",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1090",
+   "attack_object_name": "Proxy",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1090.004",
+   "attack_object_name": "Domain Fronting",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1550.001",
+   "attack_object_name": "Application Access Token",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1550.004",
+   "attack_object_name": "Web Session Cookie",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1552.007",
+   "attack_object_name": "Container API",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1557",
+   "attack_object_name": "Adversary-in-the-Middle",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1557.001",
+   "attack_object_name": "LLMNR/NBT-NS Poisoning and SMB Relay",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1557.002",
+   "attack_object_name": "ARP Cache Poisoning",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1557.003",
+   "attack_object_name": "DHCP Spoofing",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-08",
+   "capability_description": "Transmission Confidentiality and Integrity",
+   "capability_group": "SC",
+   "attack_object_id": "T1557.004",
+   "attack_object_name": "Evil Twin",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1003.008",
+   "attack_object_name": "/etc/passwd and /etc/shadow",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1005",
+   "attack_object_name": "Data from Local System",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1025",
+   "attack_object_name": "Data from Removable Media",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SC-28",
+   "capability_description": "Protection of Information at Rest",
+   "capability_group": "SC",
+   "attack_object_id": "T1041",
+   "attack_object_name": "Exfiltration Over C2 Channel",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1027",
+   "attack_object_name": "Obfuscated Files or Information",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1027.002",
+   "attack_object_name": "Software Packing",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1027.007",
+   "attack_object_name": "Dynamic API Resolution",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1027.008",
+   "attack_object_name": "Stripped Payloads",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1027.009",
+   "attack_object_name": "Embedded Payloads",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1047",
+   "attack_object_name": "Windows Management Instrumentation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1055",
+   "attack_object_name": "Process Injection",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1055.001",
+   "attack_object_name": "Dynamic-link Library Injection",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1055.002",
+   "attack_object_name": "Portable Executable Injection",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-02",
+   "capability_description": "Flaw Remediation",
+   "capability_group": "SI",
+   "attack_object_id": "T1055.003",
+   "attack_object_name": "Thread Execution Hijacking",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1001",
+   "attack_object_name": "Data Obfuscation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1001.001",
+   "attack_object_name": "Junk Data",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1001.002",
+   "attack_object_name": "Steganography",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1001.003",
+   "attack_object_name": "Protocol or Service Impersonation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-03",
+   "capability_description": "Malicious Code Protection",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1001",
+   "attack_object_name": "Data Obfuscation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1001.001",
+   "attack_object_name": "Junk Data",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1001.002",
+   "attack_object_name": "Steganography",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1001.003",
+   "attack_object_name": "Protocol or Service Impersonation",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003",
+   "attack_object_name": "OS Credential Dumping",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.001",
+   "attack_object_name": "LSASS Memory",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.002",
+   "attack_object_name": "Security Account Manager",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.003",
+   "attack_object_name": "NTDS",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.004",
+   "attack_object_name": "LSA Secrets",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.005",
+   "attack_object_name": "Cached Domain Credentials",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.006",
+   "attack_object_name": "DCSync",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  },
+  {
+   "capability_id": "SI-04",
+   "capability_description": "System Monitoring",
+   "capability_group": "SI",
+   "attack_object_id": "T1003.007",
+   "attack_object_name": "Proc Filesystem",
+   "mapping_type": "mitigates",
+   "status": "complete"
+  }
+ ]
+}

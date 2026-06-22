@@ -5,6 +5,7 @@ Subcommands:
   coverage <implemented.json> Report framework coverage from implemented controls.
   gaps <implemented.json>     List unmapped requirements for a framework.
   list                        List the control identifiers in a framework.
+  feeds list|update|get|enrich|expose   Edge/air-gap data-feed ingestion + enrichment.
 
 Standard library only (argparse + json).
 """
@@ -18,7 +19,7 @@ import json
 import sys
 from pathlib import Path
 
-from . import __version__
+from . import __version__, datafeeds, enrich
 from .crosswalk import Crosswalk, CrosswalkError
 
 
@@ -248,6 +249,92 @@ def cmd_list(args: argparse.Namespace) -> int:
     return 0
 
 
+# ---- data-feed ingestion + enrichment ---------------------------------
+
+
+def _feed_catalog() -> dict:
+    """Catalog restricted to the feed ids this repo is authorized to consume."""
+    full = datafeeds.load_catalog()
+    feeds = [f for f in full.get("feeds", []) if f["id"] in enrich.RELEVANT_FEEDS]
+    return {"feeds": feeds}
+
+
+def cmd_feeds(args: argparse.Namespace) -> int:
+    catalog = _feed_catalog()
+    action = args.feeds_action
+
+    if action == "list":
+        for f in catalog["feeds"]:
+            age = datafeeds.cached_age_hours(f["id"])
+            fresh = "uncached" if age is None else f"{age:.1f}h old"
+            print(f"  {f['id']:30} {f.get('domain',''):11} [{fresh}]  {f.get('name','')}")
+        return 0
+
+    if action == "update":
+        ids = args.ids or [f["id"] for f in catalog["feeds"]]
+        for fid in ids:
+            if fid not in enrich.RELEVANT_FEEDS:
+                print(f"  {fid}: not a feed this repo consumes", file=sys.stderr)
+                continue
+            try:
+                p = datafeeds.update(fid, catalog=catalog)
+                print(f"  updated {fid} -> {p} ({p.stat().st_size} bytes)")
+            except (KeyError, ConnectionError) as e:
+                print(f"  {fid}: {e}", file=sys.stderr)
+        return 0
+
+    if action == "get":
+        if args.id not in enrich.RELEVANT_FEEDS:
+            print(f"error: {args.id} is not a feed this repo consumes "
+                  f"(allowed: {', '.join(enrich.RELEVANT_FEEDS)})", file=sys.stderr)
+            return 2
+        try:
+            data = datafeeds.get(args.id, offline=args.offline, catalog=catalog)
+        except (KeyError, FileNotFoundError, ConnectionError) as e:
+            print(f"error: {e}", file=sys.stderr)
+            return 1
+        out = json.dumps(data, indent=2)[:4000] if isinstance(data, (dict, list)) else str(data)[:4000]
+        print(out)
+        return 0
+
+    if action == "enrich":
+        cw = _load_crosswalk(args)
+        report = enrich.enrich_nist_controls(cw, offline=args.offline)
+        if args.json:
+            _emit_json(report)
+            return 0
+        print(f"NIST 800-53 control enrichment (offline={report['offline']}) — "
+              f"{report['titles_resolved']}/{report['control_count']} titles resolved, "
+              f"{report['threat_coverage']} ATT&CK techniques mitigated\n")
+        for c in report["controls"]:
+            title = c["title"] or "(title not in cached catalog)"
+            print(f"  {c['control']:8} {title}")
+            if c["family_title"]:
+                print(f"           family: {c['family']} — {c['family_title']}")
+            print(f"           mitigates {c['technique_count']} ATT&CK technique(s)")
+        return 0
+
+    if action == "expose":
+        cw = _load_crosswalk(args)
+        implemented = _load_implemented(args.implemented)
+        report = enrich.threat_exposure_for_gaps(cw, implemented, args.framework,
+                                                 offline=args.offline)
+        if args.json:
+            _emit_json(report)
+            return 0
+        print(f"ATT&CK threat exposure for {report['framework']} gaps "
+              f"(offline={report['offline']}): {report['gap_count']} unmapped controls "
+              f"leave {report['total_attack_techniques_exposed']} ATT&CK techniques "
+              f"unmitigated\n")
+        for d in report["by_control"]:
+            title = d["title"] or ""
+            print(f"  {d['control']:8} {title}")
+            print(f"           {d['unmitigated_techniques']} unmitigated technique(s)")
+        return 0
+
+    return 2
+
+
 # ---- parser ------------------------------------------------------------
 
 
@@ -309,6 +396,43 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_list.add_argument("--json", action="store_true", help="Emit JSON.")
     p_list.set_defaults(func=cmd_list)
+
+    # feeds: edge/air-gap data-feed ingestion + real enrichment
+    p_feeds = sub.add_parser(
+        "feeds",
+        help="Edge/air-gap data-feed ingestion (NIST OSCAL + ATT&CK mappings) "
+        "and enrichment.",
+    )
+    p_feeds.set_defaults(func=cmd_feeds)
+    fsub = p_feeds.add_subparsers(dest="feeds_action", required=True)
+
+    fsub.add_parser("list", help="List the data feeds this repo consumes.")
+
+    f_up = fsub.add_parser("update", help="Fetch + cache feed(s) (online).")
+    f_up.add_argument("ids", nargs="*", help="Feed id(s); omit for all relevant feeds.")
+
+    f_get = fsub.add_parser("get", help="Print a cached/fetched feed.")
+    f_get.add_argument("id", help=f"One of: {', '.join(enrich.RELEVANT_FEEDS)}")
+    f_get.add_argument("--offline", action="store_true",
+                       help="Serve from cache only; never touch the network.")
+
+    f_en = fsub.add_parser(
+        "enrich",
+        help="Resolve the crosswalk's NIST controls to authoritative OSCAL "
+        "titles + the ATT&CK techniques they mitigate.",
+    )
+    f_en.add_argument("--offline", action="store_true", help="Cache-only.")
+    f_en.add_argument("--json", action="store_true", help="Emit JSON.")
+
+    f_ex = fsub.add_parser(
+        "expose",
+        help="Turn an unmapped-control gap report into a real ATT&CK "
+        "threat-exposure statement.",
+    )
+    f_ex.add_argument("implemented", help="Path to implemented-controls JSON.")
+    f_ex.add_argument("--framework", default="nist", help="Framework id (default: nist).")
+    f_ex.add_argument("--offline", action="store_true", help="Cache-only.")
+    f_ex.add_argument("--json", action="store_true", help="Emit JSON.")
 
     return parser
 
