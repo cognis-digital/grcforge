@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "name": "grcforge PCI-extended crosswalk (demo)",
+    "version": "1.0",
+    "maintainer": "Cognis Digital",
+    "note": "Original demo crosswalk authored by Cognis Digital. Control identifiers (NIST AC-2, CIS 5.1, SOC 2 CC6.1, PCI DSS v4.0 requirement numbers such as 8.2 and 8.4) are factual references to public frameworks. All descriptive text is original; no framework prose is reproduced. PCI requirement numbers follow PCI DSS v4.0 numbering."
+  },
+  "frameworks": {
+    "nist": "NIST SP 800-53 Rev. 5 control families",
+    "cis": "CIS Critical Security Controls v8 safeguards",
+    "soc2": "AICPA SOC 2 Trust Services Criteria (Common Criteria)",
+    "pci": "PCI DSS v4.0 requirements"
+  },
+  "mappings": [
+    {
+      "id": "PCX-001",
+      "topic": "Unique user identification",
+      "description": "Assign every person a distinct identity so actions can be attributed to an individual.",
+      "controls": {
+        "nist": ["AC-2", "IA-2"],
+        "cis": ["CIS 5.1"],
+        "soc2": ["CC6.1", "CC6.2"],
+        "pci": ["8.2"]
+      }
+    },
+    {
+      "id": "PCX-002",
+      "topic": "Multi-factor authentication",
+      "description": "Require more than one authentication factor for access into the cardholder data environment.",
+      "controls": {
+        "nist": ["IA-2"],
+        "cis": ["CIS 6.3", "CIS 6.4", "CIS 6.5"],
+        "soc2": ["CC6.1"],
+        "pci": ["8.4", "8.5"]
+      }
+    },
+    {
+      "id": "PCX-003",
+      "topic": "Least-privilege access",
+      "description": "Limit access to system components and data to only those who need it for a business reason.",
+      "controls": {
+        "nist": ["AC-6"],
+        "cis": ["CIS 6.8"],
+        "soc2": ["CC6.1"],
+        "pci": ["7.2"]
+      }
+    },
+    {
+      "id": "PCX-004",
+      "topic": "Stored account data protection",
+      "description": "Render stored sensitive account data unreadable using approved cryptography.",
+      "controls": {
+        "nist": ["SC-28"],
+        "cis": ["CIS 3.11"],
+        "soc2": ["CC6.1"],
+        "pci": ["3.5"]
+      }
+    },
+    {
+      "id": "PCX-005",
+      "topic": "Encryption of data in transit",
+      "description": "Protect account data with strong cryptography when transmitted over open or public networks.",
+      "controls": {
+        "nist": ["SC-8"],
+        "cis": ["CIS 3.10"],
+        "soc2": ["CC6.7"],
+        "pci": ["4.2"]
+      }
+    },
+    {
+      "id": "PCX-006",
+      "topic": "Audit logging of access",
+      "description": "Record access to system components and account data so events can be reconstructed.",
+      "controls": {
+        "nist": ["AU-2", "AU-3"],
+        "cis": ["CIS 8.2", "CIS 8.5"],
+        "soc2": ["CC7.2"],
+        "pci": ["10.2"]
+      }
+    },
+    {
+      "id": "PCX-007",
+      "topic": "Audit log review and retention",
+      "description": "Review logs regularly and retain them for a defined period, protected from change.",
+      "controls": {
+        "nist": ["AU-9", "AU-11"],
+        "cis": ["CIS 8.3", "CIS 8.10", "CIS 8.11"],
+        "soc2": ["CC7.2"],
+        "pci": ["10.4", "10.5"]
+      }
+    },
+    {
+      "id": "PCX-008",
+      "topic": "Vulnerability management",
+      "description": "Identify and rank security weaknesses and remediate them on a risk-based cadence.",
+      "controls": {
+        "nist": ["RA-5", "SI-2"],
+        "cis": ["CIS 7.1", "CIS 7.5", "CIS 7.6"],
+        "soc2": ["CC7.1"],
+        "pci": ["6.3", "11.3"]
+      }
+    },
+    {
+      "id": "PCX-009",
+      "topic": "Anti-malware protection",
+      "description": "Deploy and maintain mechanisms that detect and respond to malicious software.",
+      "controls": {
+        "nist": ["SI-3"],
+        "cis": ["CIS 10.1", "CIS 10.2"],
+        "soc2": ["CC6.8"],
+        "pci": ["5.2", "5.3"]
+      }
+    },
+    {
+      "id": "PCX-010",
+      "topic": "Network segmentation and boundary control",
+      "description": "Install and maintain controls between trusted and untrusted networks to isolate the cardholder data environment.",
+      "controls": {
+        "nist": ["SC-7"],
+        "cis": ["CIS 13.4", "CIS 4.4"],
+        "soc2": ["CC6.6"],
+        "pci": ["1.3", "1.4"]
+      }
+    }
+  ]
+}

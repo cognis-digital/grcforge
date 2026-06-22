@@ -12,6 +12,8 @@ Standard library only (argparse + json).
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
 import sys
 from pathlib import Path
@@ -40,6 +42,91 @@ def _load_implemented(path: str) -> dict:
 
 def _emit_json(obj) -> None:
     print(json.dumps(obj, indent=2, ensure_ascii=False))
+
+
+def _resolve_format(args: argparse.Namespace) -> str:
+    """Decide the output format from --format / legacy --json.
+
+    --json is kept as a backward-compatible alias for --format json. If both
+    are given they must agree, otherwise it is a usage error.
+    """
+    fmt = getattr(args, "format", None)
+    legacy_json = getattr(args, "json", False)
+    if legacy_json:
+        if fmt and fmt != "json":
+            raise CrosswalkError(
+                f"--json conflicts with --format {fmt}; pass only one."
+            )
+        return "json"
+    return fmt or "table"
+
+
+def _coverage_csv(result: dict, cw: Crosswalk) -> str:
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\n")
+    w.writerow(["framework", "label", "total", "satisfied", "percent"])
+    for fw, info in result["frameworks"].items():
+        w.writerow(
+            [
+                fw,
+                cw.frameworks.get(fw, fw),
+                info["total"],
+                info["satisfied"],
+                info["percent"],
+            ]
+        )
+    return buf.getvalue()
+
+
+def _coverage_markdown(result: dict, cw: Crosswalk) -> str:
+    lines = [
+        f"# Coverage report",
+        "",
+        f"- Mappings: **{result['total_mappings']}**",
+        f"- Satisfied mappings: **{len(result['satisfied_mappings'])}**",
+        "",
+        "| Framework | Label | Satisfied | Total | Percent |",
+        "| --- | --- | ---: | ---: | ---: |",
+    ]
+    for fw, info in result["frameworks"].items():
+        label = cw.frameworks.get(fw, fw)
+        lines.append(
+            f"| {fw} | {label} | {info['satisfied']} | {info['total']} | "
+            f"{info['percent']}% |"
+        )
+    return "\n".join(lines) + "\n"
+
+
+def _gaps_csv(result: dict) -> str:
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\n")
+    w.writerow(["framework", "control", "topic", "mapping_id"])
+    fw = result["framework"]
+    for gap in result["missing_controls"]:
+        if gap["mappings"]:
+            for mp in gap["mappings"]:
+                w.writerow([fw, gap["control"], mp["topic"], mp["id"]])
+        else:
+            w.writerow([fw, gap["control"], "", ""])
+    return buf.getvalue()
+
+
+def _gaps_markdown(result: dict, cw: Crosswalk) -> str:
+    fw = result["framework"]
+    label = cw.frameworks.get(fw, fw)
+    lines = [
+        f"# Gap analysis — {fw} ({label})",
+        "",
+        f"- Unmapped: **{result['gaps']}** of {result['total']} "
+        f"({result['covered']} covered)",
+        "",
+        "| Control | Topic(s) |",
+        "| --- | --- |",
+    ]
+    for gap in result["missing_controls"]:
+        topics = "; ".join(t["topic"] for t in gap["mappings"]) or "(no topic)"
+        lines.append(f"| {gap['control']} | {topics} |")
+    return "\n".join(lines) + "\n"
 
 
 # ---- command handlers --------------------------------------------------
@@ -72,8 +159,15 @@ def cmd_coverage(args: argparse.Namespace) -> int:
     cw = _load_crosswalk(args)
     implemented = _load_implemented(args.implemented)
     result = cw.coverage(implemented)
-    if args.json:
+    fmt = _resolve_format(args)
+    if fmt == "json":
         _emit_json(result)
+        return 0
+    if fmt == "csv":
+        sys.stdout.write(_coverage_csv(result, cw))
+        return 0
+    if fmt == "markdown":
+        sys.stdout.write(_coverage_markdown(result, cw))
         return 0
     print(
         f"Coverage report ({result['total_mappings']} mappings, "
@@ -94,8 +188,15 @@ def cmd_gaps(args: argparse.Namespace) -> int:
     cw = _load_crosswalk(args)
     implemented = _load_implemented(args.implemented)
     result = cw.gaps(implemented, args.framework)
-    if args.json:
+    fmt = _resolve_format(args)
+    if fmt == "json":
         _emit_json(result)
+        return 0
+    if fmt == "csv":
+        sys.stdout.write(_gaps_csv(result))
+        return 0
+    if fmt == "markdown":
+        sys.stdout.write(_gaps_markdown(result, cw))
         return 0
     fw = result["framework"]
     label = cw.frameworks.get(fw, fw)
@@ -174,7 +275,14 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_cov = sub.add_parser("coverage", help="Report framework coverage.")
     p_cov.add_argument("implemented", help="Path to implemented-controls JSON.")
-    p_cov.add_argument("--json", action="store_true", help="Emit JSON.")
+    p_cov.add_argument(
+        "--format",
+        choices=["table", "json", "csv", "markdown"],
+        help="Output format (default: table).",
+    )
+    p_cov.add_argument(
+        "--json", action="store_true", help="Alias for --format json."
+    )
     p_cov.add_argument(
         "--verbose", action="store_true", help="List satisfied controls per framework."
     )
@@ -185,7 +293,14 @@ def build_parser() -> argparse.ArgumentParser:
     p_gap.add_argument(
         "--framework", required=True, help="Framework id, e.g. nist, cis, soc2."
     )
-    p_gap.add_argument("--json", action="store_true", help="Emit JSON.")
+    p_gap.add_argument(
+        "--format",
+        choices=["table", "json", "csv", "markdown"],
+        help="Output format (default: table).",
+    )
+    p_gap.add_argument(
+        "--json", action="store_true", help="Alias for --format json."
+    )
     p_gap.set_defaults(func=cmd_gaps)
 
     p_list = sub.add_parser("list", help="List frameworks or controls in a framework.")

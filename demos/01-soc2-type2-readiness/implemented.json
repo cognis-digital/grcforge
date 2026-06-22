@@ -1,0 +1,7 @@
+{
+  "implemented": {
+    "nist": ["AC-2", "AC-6", "IA-2", "AU-2", "AU-3", "AU-9", "SI-2", "SI-3", "CM-8", "CM-2", "SC-28", "SC-8", "CP-9"],
+    "cis": ["CIS 5.1", "CIS 5.3", "CIS 6.3", "CIS 6.8", "CIS 7.3", "CIS 7.4", "CIS 1.1", "CIS 2.1", "CIS 3.10", "CIS 3.11", "CIS 8.2", "CIS 10.1", "CIS 11.1"],
+    "soc2": ["CC6.1", "CC6.2", "CC6.3", "CC6.7", "CC6.8", "CC7.1", "CC7.2"]
+  }
+}

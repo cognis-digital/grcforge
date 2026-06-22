@@ -129,3 +129,71 @@ def test_implemented_bare_mapping(tmp_path, capsys):
     assert rc == 0
     data = json.loads(capsys.readouterr().out)
     assert data["frameworks"]["nist"]["satisfied"] >= 1
+
+
+# ---- export formats (csv / markdown / format flag) ---------------------
+
+
+def test_coverage_csv(capsys):
+    rc = main(["coverage", EXAMPLE, "--format", "csv"])
+    assert rc == 0
+    out = capsys.readouterr().out
+    lines = out.strip().splitlines()
+    assert lines[0] == "framework,label,total,satisfied,percent"
+    # one header + one row per framework (nist, cis, soc2)
+    assert len(lines) == 4
+    assert any(line.startswith("nist,") for line in lines[1:])
+
+
+def test_coverage_markdown(capsys):
+    rc = main(["coverage", EXAMPLE, "--format", "markdown"])
+    assert rc == 0
+    out = capsys.readouterr().out
+    assert "# Coverage report" in out
+    assert "| Framework |" in out
+    assert "| nist |" in out
+
+
+def test_coverage_format_json_equals_json_flag(capsys):
+    rc = main(["coverage", EXAMPLE, "--format", "json"])
+    assert rc == 0
+    data = json.loads(capsys.readouterr().out)
+    assert "frameworks" in data
+
+
+def test_gaps_csv(capsys):
+    rc = main(["gaps", EXAMPLE, "--framework", "soc2", "--format", "csv"])
+    assert rc == 0
+    out = capsys.readouterr().out
+    lines = out.strip().splitlines()
+    assert lines[0] == "framework,control,topic,mapping_id"
+    assert len(lines) > 1
+    assert all(line.startswith("soc2,") for line in lines[1:])
+
+
+def test_gaps_markdown(capsys):
+    rc = main(["gaps", EXAMPLE, "--framework", "soc2", "--format", "markdown"])
+    assert rc == 0
+    out = capsys.readouterr().out
+    assert "# Gap analysis" in out
+    assert "| Control | Topic(s) |" in out
+
+
+def test_format_conflicts_with_json_flag(capsys):
+    rc = main(["coverage", EXAMPLE, "--json", "--format", "csv"])
+    assert rc == 2
+    assert "conflicts" in capsys.readouterr().err
+
+
+def test_format_json_with_json_flag_agrees(capsys):
+    # --json plus --format json is harmless (they agree).
+    rc = main(["coverage", EXAMPLE, "--json", "--format", "json"])
+    assert rc == 0
+    data = json.loads(capsys.readouterr().out)
+    assert "frameworks" in data
+
+
+def test_invalid_format_rejected(capsys):
+    with pytest.raises(SystemExit) as e:
+        main(["coverage", EXAMPLE, "--format", "xml"])
+    assert e.value.code != 0

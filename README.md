@@ -49,6 +49,21 @@ grcforge coverage examples/implemented.json
 grcforge coverage examples/implemented.json --json --verbose
 ```
 
+#### Export formats
+
+`coverage` and `gaps` can emit machine-readable output for audit workpapers,
+wikis, and downstream tooling via `--format {table,json,csv,markdown}` (default
+`table`). `--json` remains as a backward-compatible alias for `--format json`.
+
+```bash
+grcforge coverage examples/implemented.json --format csv      > coverage.csv
+grcforge coverage examples/implemented.json --format markdown > coverage.md
+grcforge gaps examples/implemented.json --framework soc2 --format csv
+```
+
+CSV coverage is one row per framework (`framework,label,total,satisfied,percent`);
+CSV gaps is one row per `framework,control,topic,mapping_id`.
+
 `implemented.json` is a mapping of framework id to a list of control ids. Either
 shape works:
 
@@ -103,6 +118,24 @@ Any subcommand accepts `--crosswalk path/to/file.json`. The file format is:
 Validation is strict: every mapping needs a unique `id`, control lists must be
 strings, and any framework referenced in a mapping must be declared in
 `frameworks`.
+
+## Demos
+
+The [`demos/`](demos/) directory holds worked, real-use-case scenarios. Each is a
+self-contained folder with input files in the tool's real format and a
+`SCENARIO.md` describing where the data came from, what to expect, the exact
+command to run, and how to act on the result.
+
+| Demo | Scenario |
+| --- | --- |
+| [01-soc2-type2-readiness](demos/01-soc2-type2-readiness) | SOC 2 Type II readiness check before the observation window |
+| [02-fedramp-li-saas-gaps](demos/02-fedramp-li-saas-gaps) | NIST 800-53 gap analysis for a SaaS pursuing a federal authorization |
+| [03-greenfield-startup](demos/03-greenfield-startup) | Day-zero startup: turn an empty control set into a themed roadmap |
+| [04-cis-ig1-smb](demos/04-cis-ig1-smb) | SMB working through CIS Controls v8 essential cyber hygiene |
+| [05-incident-response-crosswalk](demos/05-incident-response-crosswalk) | Align one incident-response control across NIST/CIS/SOC 2 with `map` |
+| [06-post-merger-consolidation](demos/06-post-merger-consolidation) | Find the controls that fell through the cracks after a merger |
+| [07-pci-dss-custom-crosswalk](demos/07-pci-dss-custom-crosswalk) | Bring-your-own crosswalk: fold PCI DSS v4.0 into the same model |
+| [08-audit-evidence-export](demos/08-audit-evidence-export) | Export CSV/Markdown coverage and gaps for an audit workpaper |
 
 ## Scope
 
