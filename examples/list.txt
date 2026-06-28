@@ -1,0 +1,32 @@
+$ grcforge list
+
+Frameworks:
+  nist: NIST SP 800-53 Rev. 5 control families (29 controls)
+  cis: CIS Critical Security Controls v8 safeguards (40 controls)
+  soc2: AICPA SOC 2 Trust Services Criteria (Common Criteria) (18 controls)
+
+Mappings (24):
+  [GRC-001] Account lifecycle management
+  [GRC-002] Least-privilege access enforcement
+  [GRC-003] Multi-factor authentication
+  [GRC-004] Audit log generation
+  [GRC-005] Audit log retention and protection
+  [GRC-006] Vulnerability scanning and remediation
+  [GRC-007] Patch and flaw remediation
+  [GRC-008] Malware and endpoint protection
+  [GRC-009] Hardware and software inventory
+  [GRC-010] Secure configuration baselines
+  [GRC-011] Data-at-rest encryption
+  [GRC-012] Data-in-transit encryption
+  [GRC-013] Backup and recovery
+  [GRC-014] Incident response process
+  [GRC-015] Security awareness training
+  [GRC-016] Risk assessment
+  [GRC-017] Vendor and third-party risk
+  [GRC-018] Boundary and network protection
+  [GRC-019] Physical access control
+  [GRC-020] Change management
+  [GRC-021] Access revocation on termination
+  [GRC-022] System monitoring and alerting
+  [GRC-023] Data inventory and classification
+  [GRC-024] Contingency and continuity planning

@@ -1,0 +1,22 @@
+$ grcforge --help
+
+usage: grcforge [-h] [--version] [--crosswalk FILE]
+                {map,coverage,gaps,list,feeds} ...
+
+GRC control crosswalk engine: map controls across frameworks, measure
+coverage, and find gaps.
+
+positional arguments:
+  {map,coverage,gaps,list,feeds}
+    map                 Show cross-framework equivalents.
+    coverage            Report framework coverage.
+    gaps                List unmapped requirements for a framework.
+    list                List frameworks or controls in a framework.
+    feeds               Edge/air-gap data-feed ingestion (NIST OSCAL + ATT&CK
+                        mappings) and enrichment.
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --crosswalk FILE      Path to a crosswalk JSON file (overrides the built-in
+                        starter).

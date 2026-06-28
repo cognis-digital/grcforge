@@ -1,0 +1,3 @@
+$ grcforge --version
+
+grcforge 1.0.0

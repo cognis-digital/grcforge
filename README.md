@@ -18,6 +18,79 @@ the bundled crosswalk is written from scratch by Cognis Digital. No framework
 prose is reproduced. Bring your own crosswalk with `--crosswalk file.json` to
 extend or replace the starter set.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ grcforge --version
+grcforge 1.0.0
+```
+
+```console
+$ grcforge --help
+usage: grcforge [-h] [--version] [--crosswalk FILE]
+                {map,coverage,gaps,list,feeds} ...
+
+GRC control crosswalk engine: map controls across frameworks, measure
+coverage, and find gaps.
+
+positional arguments:
+  {map,coverage,gaps,list,feeds}
+    map                 Show cross-framework equivalents.
+    coverage            Report framework coverage.
+    gaps                List unmapped requirements for a framework.
+    list                List frameworks or controls in a framework.
+    feeds               Edge/air-gap data-feed ingestion (NIST OSCAL + ATT&CK
+                        mappings) and enrichment.
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --crosswalk FILE      Path to a crosswalk JSON file (overrides the built-in
+                        starter).
+```
+
+```console
+$ grcforge list
+Frameworks:
+  nist: NIST SP 800-53 Rev. 5 control families (29 controls)
+  cis: CIS Critical Security Controls v8 safeguards (40 controls)
+  soc2: AICPA SOC 2 Trust Services Criteria (Common Criteria) (18 controls)
+
+Mappings (24):
+  [GRC-001] Account lifecycle management
+  [GRC-002] Least-privilege access enforcement
+  [GRC-003] Multi-factor authentication
+  [GRC-004] Audit log generation
+  [GRC-005] Audit log retention and protection
+  [GRC-006] Vulnerability scanning and remediation
+  [GRC-007] Patch and flaw remediation
+  [GRC-008] Malware and endpoint protection
+  [GRC-009] Hardware and software inventory
+  [GRC-010] Secure configuration baselines
+  [GRC-011] Data-at-rest encryption
+  [GRC-012] Data-in-transit encryption
+  [GRC-013] Backup and recovery
+  [GRC-014] Incident response process
+  [GRC-015] Security awareness training
+  [GRC-016] Risk assessment
+  [GRC-017] Vendor and third-party risk
+  [GRC-018] Boundary and network protection
+  [GRC-019] Physical access control
+  [GRC-020] Change management
+  [GRC-021] Access revocation on termination
+  [GRC-022] System monitoring and alerting
+  [GRC-023] Data inventory and classification
+  [GRC-024] Contingency and continuity planning
+```
+
+> Blocks above are real `grcforge` output — reproduce them from a clone.
+
+<!-- cognis:example:end -->
+
 ## Install
 
 ```bash
